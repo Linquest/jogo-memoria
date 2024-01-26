@@ -4,7 +4,15 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	background-color: #000000;
-    user-select: none;
+	user-select: none;
+	background-image: linear-gradient(
+		to right top,
+		#051937,
+		#004d7a,
+		#008793,
+		#00bf72,
+		#a8eb12
+	);
 }
 
 .container {
@@ -14,14 +22,34 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
-	background: linear-gradient(325deg, black 5%, #e66465 30%, #9198e5);
+	background-image: linear-gradient(
+		to right top,
+		#d16ba5,
+		#c777b9,
+		#ba83ca,
+		#aa8fd8,
+		#9a9ae1,
+		#89a0e4,
+		#79a6e4,
+		#6babe2,
+		#59addb,
+		#4badd2,
+		#43aec8,
+		#43adbc
+	);
 	padding: 40px 60px;
+	border-radius: 8px;
+	box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
+	-webkit-box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
+	-moz-box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
 }
 
 h2 {
 	color: #fff;
 	font-size: 2rem;
+	text-align: center;
 	text-transform: uppercase;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
 }
 
 .reset {
@@ -30,6 +58,8 @@ h2 {
 	color: #000000;
 	background-color: #fff;
 	font-size: 1.2rem;
+	border-radius: 8px;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.3);
 	cursor: pointer;
 }
 
@@ -39,24 +69,23 @@ h2 {
 }
 
 .game {
-	border: 1px solid #fff;
+	border: 15px ridge #ffffff;
 	display: grid;
 	justify-content: center;
 	align-items: center;
-	grid-template-columns: repeat(5, 100px);
-	grid-template-rows: repeat(5, 100px);
+	grid-template-columns: repeat(6, 90px);
+	grid-template-rows: repeat(6, 120px);
 	width: 600px;
-	height: 500px;
-	gap: 0px;
-	background-color: rgba(128, 128, 128, 0.219);
+	height: 520px;
 	transform-style: preserve-3d;
 	perspective: 500px;
+	border-radius: 10px;
 }
 
 .card {
 	position: relative;
 	width: 80px;
-	height: 80px;
+	height: 100px;
 	display: flex;
 	font-size: 3em;
 	justify-content: center;
@@ -67,29 +96,29 @@ h2 {
 	transform: rotateY(180deg);
 	transition: 0.25s;
 	background-color: rgb(211, 211, 211);
+	border-radius: 8px;
+	box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
+	-webkit-box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
+	-moz-box-shadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.98);
 }
 
 .card::after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		325deg,
-		rgb(204, 189, 59) 5%,
-		#64e66b 30%,
-		#0015ff
-	);
-    opacity: 0.85;
+	background-image: url(../assets/brain.jpg);
+    background-size: cover;
 	transition: 0.25s;
 	transform: rotateY(180deg);
 	backface-visibility: hidden;
+	border-radius: 8px;
 }
 
 .card.boxOpen {
-    transform: rotateY(0deg);
+	transform: rotateY(0deg);
 }
 
 .boxOpen ::after,
 .boxMatch ::after {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
